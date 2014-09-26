@@ -2,6 +2,23 @@
 <openerp>
 
 <data>
-
+    <record model="ir.ui.view" id="project_hierarchy_task_edit">
+        <field name="name">project_hierarchy.task.edit</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="model">project.task</field>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <newline/>
+                    <field name="previous_tasks_hierarchy" colspan="4">
+                        <tree>
+                            <field name="name" string="Name"/>
+                        </tree>
+                    </field>
+                    <newline/>
+                </xpath>
+            </data>
+        </field>
+    </record>
 </data>
 </openerp>
